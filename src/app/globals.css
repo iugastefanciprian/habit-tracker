@@ -1,1 +1,21 @@
 @import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+.app-main {
+  transition: padding-left 200ms ease;
+}
+
+@media (min-width: 768px) {
+  html[data-nav-collapsed="true"] .app-nav {
+    transform: translateX(-100%);
+  }
+
+  .app-main {
+    padding-left: 18rem;
+  }
+
+  html[data-nav-collapsed="true"] .app-main {
+    padding-left: 1rem;
+  }
+}
